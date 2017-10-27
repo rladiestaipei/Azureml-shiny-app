@@ -12,7 +12,7 @@ Titanic prediction workshop - shiny on Azure via ML studio
 
 ### 教學文件 
 [slide](https://www.slideshare.net/secret/zUakvy1Om1mfLW)
-
+[官方文件](https://docs.microsoft.com/en-us/azure/machine-learning/studio/what-is-ml-studio)
 ### 補充教材
 AzureML環境介紹 [Video](https://www.facebook.com/chiehningchen/videos/10154231877932471/)
 如何上傳資料 [Video](https://www.facebook.com/chiehningchen/videos/10154322903962471/)
