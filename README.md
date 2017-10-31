@@ -34,7 +34,7 @@ AzureML環境介紹 [Video](https://www.facebook.com/chiehningchen/videos/101542
 ## 如何用Python在Azure ML刻演算法 @Mia
 
 ### Code/示範
-
+[link](https://github.com/rladiestaipei/Azureml-shiny-app/tree/master/python)
 ### 教學文件 
 
 ### 補充教材
