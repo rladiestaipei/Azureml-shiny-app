@@ -4,6 +4,11 @@ Titanic prediction workshop - shiny on Azure via ML studio
 1. Azure Machine Learning Studio介紹
 2. 連結預設模型(AzureML裡)到Shiny
 3. 如何用Python在Azure ML刻演算法
+
+![圖](https://www.evernote.com/l/ANzHJ9AEGuBJ76lgy3taL1uELsbMe353i28B/image.png)
+
+
+
 每個部分會包含 Code/示範、教學文件、補充教材
 
 ## Azure Machine Learning Studio介紹 @Ning  
