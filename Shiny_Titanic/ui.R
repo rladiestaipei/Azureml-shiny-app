@@ -9,7 +9,8 @@ library(data.table)
 # Data Prepare for selectInput,sliderInput,numericInput
 #===========================================================================
 #---- Setting path ----
-path = '/Users/kristen/Desktop/Azure_ML_Titanic/'
+# path = '/Users/kristen/Desktop/Azure_ML_Titanic/'
+path = getwd()
 
 #---- Load Data ----
 Azure_ML_train <- fread(file.path(path, "Azure_ML_train.csv")) %>% select(-Survived)
