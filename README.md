@@ -1,7 +1,7 @@
 # Azureml-shiny-app
-Titanic prediction workshop - shiny on Azure via ML studio  
+Titanic prediction workshop - shiny on Azure via ML studio
 
-學習如何用鐵達尼號數據做出一個web service，上手Machine Learning Studio 以 Web 服務方式發佈模型，透過R Shiny做出可互動式預測結果並在 Azure 虛擬機器執行  
+學習如何用鐵達尼號數據做出一個web service，上手Machine Learning Studio 以 Web 服務方式發佈模型，透過R Shiny做出可互動式預測結果並在 Azure 虛擬機器執行
 
 課程內容分成三部分
 1. Azure Machine Learning Studio介紹
@@ -14,25 +14,25 @@ Titanic prediction workshop - shiny on Azure via ML studio
 
 每個部分會包含 Code/示範、教學文件、補充教材
 
-## Azure Machine Learning Studio介紹 @Ning  
+## Azure Machine Learning Studio介紹 @Ning
 ### Code/示範
 [link](https://gallery.cortanaintelligence.com/Experiment/AzureMLPredictModelforteaching)
 
-### 教學文件 
+### 教學文件
 [slide](https://www.slideshare.net/secret/zUakvy1Om1mfLW)
 [官方文件](https://docs.microsoft.com/en-us/azure/machine-learning/studio/what-is-ml-studio)
 
 ### 補充教材
-AzureML環境介紹 [Video](https://www.facebook.com/chiehningchen/videos/10154231877932471/)  
-如何上傳資料 [Video](https://www.facebook.com/chiehningchen/videos/10154322903962471/)  
-五分鐘快速上手 [link](https://docs.microsoft.com/en-us/azure/machine-learning/preview/)  
+AzureML環境介紹 [Video](https://www.facebook.com/chiehningchen/videos/10154231877932471/)
+如何上傳資料 [Video](https://www.facebook.com/chiehningchen/videos/10154322903962471/)
+五分鐘快速上手 [link](https://docs.microsoft.com/en-us/azure/machine-learning/preview/)
 
 
 ## 連結預設模型(AzureML裡)到Shiny @Kristen
 ### Code/示範
 [link](https://github.com/rladiestaipei/Azureml-shiny-app/)
 
-### 教學文件 
+### 教學文件
 [slide](https://www.slideshare.net/HsinYuChan1/shiny-on-azure)
 
 ### 補充教材
@@ -44,7 +44,7 @@ AzureML環境介紹 [Video](https://www.facebook.com/chiehningchen/videos/101542
 
 ```
 docker version
-docker pull rocker/shiny
+docker pull kristenchan/azureml_shiny
 cd ${PROJ_DIR}
 git clone https://github.com/rladiestaipei/Azureml-shiny-app.git
 
@@ -67,7 +67,7 @@ docker restart rladies_azureml
 
 ### Code/示範
 [link](https://github.com/rladiestaipei/Azureml-shiny-app/tree/master/python)
-### 教學文件 
+### 教學文件
 
 ### 補充教材
 參考資料1.Training and operationalization of Scikit-Learn models
