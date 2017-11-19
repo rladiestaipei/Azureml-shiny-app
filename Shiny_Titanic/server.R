@@ -30,16 +30,13 @@ function(input, output) {
     
     h = basicTextGatherer()
     hdr = basicHeaderGatherer()
-    
-    #---- UI input data ----    
-    input_data = UI_input()
-    
+       
     #---- Put input_data to Azure ML workspace ----
     req = list(
       Inputs = list(
         "input1" = list(
           "ColumnNames" = list("PassengerClass", "Gender", "Age", "SiblingSpouse", "ParentChild", "FarePrice", "PortEmbarkation"),
-          "Values" = list(  input_data  ) 
+          "Values" = list(  UI_input()   ) 
           #Example: input_data = list("3", "male", "50", "0", "0", "0", "A")
           )
         ),
