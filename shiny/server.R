@@ -1,3 +1,10 @@
+install.packages("shiny")
+install.packages("dplyr")
+install.packages("data.table")
+library(RCurl)
+library(rjson
+
+
 #===========================================================================
 # Library
 #===========================================================================
