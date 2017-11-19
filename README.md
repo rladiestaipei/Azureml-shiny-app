@@ -45,13 +45,14 @@ AzureML環境介紹 [Video](https://www.facebook.com/chiehningchen/videos/101542
 ```
 docker version
 docker pull rocker/shiny
+cd ${PROJ_DIR}
 git clone https://github.com/rladiestaipei/Azureml-shiny-app.git
 
 # 更新 API Key，do whatever you wanna deal with your shiny app
 
 docker run --rm --name rladies_azureml -p 3838:3838 \
-    -v /Users/suensummit/Documents/Azureml-shiny-app/:/srv/shiny-server/ \
-    -v /Users/suensummit/Documents/Azureml-shiny-app/log/:/var/log/shiny-server/ \
+    -v ${PROJ_DIR}/Azureml-shiny-app/:/srv/shiny-server/ \
+    -v ${PROJ_DIR}/Azureml-shiny-app/log/:/var/log/shiny-server/ \
     rocker/shiny
 docker exec -d rladies_azureml sh /srv/shiny-server/prepare_library.sh
 
@@ -60,7 +61,7 @@ docker exec -d rladies_azureml sh /srv/shiny-server/prepare_library.sh
 docker restart rladies_azureml
 ```
 
-打開瀏覽器，網址列輸入 `localhost:3838/shiny`
+打開瀏覽器，網址列輸入 `localhost:3838/Shiny_Titanic`
 
 ## 如何用Python在Azure ML刻演算法 @Mia
 
