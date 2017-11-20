@@ -1,23 +1,28 @@
 # Docker 版本使用方式
 
-開啟 terminal 或是 power shell 執行
+** Step0. **
+先安裝好 Docker
+> Docker For Mac / Docker For Windows
 
+** Step1. **
+開啟 Terminal 或是 Power Shell 
+
+** Step2. **
+```
 docker version
 docker pull kristenchan/azureml_shiny
 cd ${PROJ_DIR}
 git clone https://github.com/rladiestaipei/Azureml-shiny-app.git
+```
+> Do whatever you wanna deal with your shiny app
+> + 更新 API Key
 
-# 更新 API Key，do whatever you wanna deal with your shiny app
-
+** Step3. **
 ```
 docker run --rm --name rladies_azureml -p 3838:3838 \
     -v ${PROJ_DIR}/Azureml-shiny-app/:/srv/shiny-server/ \
     -v ${PROJ_DIR}/Azureml-shiny-app/log/:/var/log/shiny-server/ \
-    rocker/shiny
-docker exec -d rladies_azureml sh /srv/shiny-server/prepare_library.sh
+    kristenchan/azureml_shiny
 ```
-
-# 這中間要等一下大概三到五分鐘讓 Docker 裡面把 library 裝起來
-
-docker restart rladies_azureml
+** Step4. **
 打開瀏覽器，網址列輸入 localhost:3838/Shiny_Titanic
