@@ -4,6 +4,7 @@
 library(shiny)
 library(dplyr)
 library(data.table)
+library(bitops)
 library(RCurl)
 library(rjson)
 
@@ -12,15 +13,15 @@ library(rjson)
 #===========================================================================
 function(input, output) {
   #==== Get UI.R's input ====
-  UI_input <- reactive({  v_1 <- input$PassengerClass
-                          v_2 <- input$Gender 
-                          v_3 <- as.character(input$Age)  
-                          v_4 <- as.character(input$SiblingSpouse)  
-                          v_5 <- as.character(input$ParentChild)  
-                          v_6 <- as.character(input$FarePrice)  
-                          v_7 <- input$PortEmbarkation
-                          return(list( v_1,v_2,v_3,v_4,v_5,v_6,v_7 ))
-                       })
+  Ui_input <- reactive({ 
+   return( list( 'PassengerClass' = input$PassengerClass,
+                 'Gender' = input$Gender ,
+                 'Age' = as.character(input$Age),
+                 'SiblingSpouse' = as.character(input$SiblingSpouse) ,
+                 'ParentChild' = as.character(input$ParentChild),
+                 'FarePrice' = as.character(input$FarePrice),
+                 'PortEmbarkation' = input$PortEmbarkation ) )
+  })
   
   #==== Output : Prediction ====   
   output$result_plot <- renderImage({
@@ -30,26 +31,24 @@ function(input, output) {
     
     h = basicTextGatherer()
     hdr = basicHeaderGatherer()
-       
+    
     #---- Put input_data to Azure ML workspace ----
     req = list(
       Inputs = list(
         "input1" = list(
-          "ColumnNames" = list("PassengerClass", "Gender", "Age", "SiblingSpouse", "ParentChild", "FarePrice", "PortEmbarkation"),
-          "Values" = list(  UI_input()   ) 
-          #Example: input_data = list("3", "male", "50", "0", "0", "0", "A")
-          )
-        ),
+          Ui_input()
+        )
+      ),
       GlobalParameters = setNames(fromJSON('{}'), character(0))
-      )
+    )
     
     #---- Web service : API key ----
     body = enc2utf8(toJSON(req))
-    api_key = "Your api key" 
+    api_key = " Your API Key " 
     authz_hdr = paste('Bearer', api_key, sep=' ')
     
     h$reset()
-    curlPerform(url = "https://ussouthcentral.services.azureml.net/workspaces/852a506a05ab41868939caa8f97d3a57/services/c052c781636540b4a2530c5b753cb947/execute?api-version=2.0&details=true",
+    curlPerform(url = " Your Request-Response URL ",
                 httpheader=c('Content-Type' = "application/json", 'Authorization' = authz_hdr),
                 postfields=body,
                 writefunction = h$update,
@@ -58,21 +57,20 @@ function(input, output) {
     )
     
     #---- Get Result  ----
-    result = h$value()
+    result = fromJSON( h$value() )
     
-    if (fromJSON(result)$Results$output2$value$Values == "1") {
+    if ( result$Results$output2[[1]]$PredictedSurvived == "1") {
       return( list(
         src = "www/survived.png",
         height = 480, width = 700,
         alt = "Survived"
       ))
-    }else if (fromJSON(result)$Results$output2$value$Values == "0") {
+    }else if ( result$Results$output2[[1]]$PredictedSurvived == "0") {
       return(list(
         src = "www/deceased.png",
         height = 480, width = 700,
         alt = "Deceased"
       ))
-      }
-    }, deleteFile = FALSE)
+    }
+  }, deleteFile = FALSE)
 }
-

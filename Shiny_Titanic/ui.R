@@ -3,49 +3,39 @@
 #===========================================================================
 library(shiny)
 library(dplyr)
-library(markdown)
 library(data.table)
 #===========================================================================
 # Data Prepare for selectInput,sliderInput,numericInput
 #===========================================================================
-#---- Setting path ----
-# path = '/Users/kristen/Desktop/Azure_ML_Titanic/'
-path = getwd()
+path = ' Your File Path '
+#Path Example(Mac): '/Users/kristen/Desktop/'
+#Path Example(Mac): 'C:/Desktop/'
 
 #---- Load Data ----
-Azure_ML_train <- fread(file.path(path, "Azure_ML_train.csv")) %>% select(-Survived)
-Azure_ML_test <- fread(file.path(path, "Azure_ML_test.csv"))
+Titanic_train <- fread(file.path(path, "Titanic_train.csv")) %>% select(-Survived)
+Titanic_test <- fread(file.path(path, "Titanic_test.csv"))
 
 #---- Bind Data ----
-Azure_ML_data <- rbind(Azure_ML_train,Azure_ML_test)
-rm(Azure_ML_train,Azure_ML_test)
+Titanic_data <- rbind(Titanic_train,Titanic_test)
+rm(Titanic_train,Titanic_test)
 
 #---- selectInput for classfication variable ----
-Pclass <- sort(unique(Azure_ML_data$PassengerClass))
-gender <- sort(unique(Azure_ML_data$Gender))
-Embarked <- sort(unique(Azure_ML_data$PortEmbarkation[Azure_ML_data$PortEmbarkation != ""]))
-
-#Azure_ML_data %>% select(PortEmbarkation) %>% distinct(PortEmbarkation) %>% arrange(PortEmbarkation)
+pclass <- sort(unique(Titanic_data$PassengerClass))
+gender <- sort(unique(Titanic_data$Gender))
+embarked <- sort(unique(Titanic_data$PortEmbarkation[Titanic_data$PortEmbarkation != ""]))
 
 #---- sliderInput ----
-Fare <- data.frame( max = max(Azure_ML_data$FarePrice ,na.rm =TRUE), 
-                    min = min(Azure_ML_data$FarePrice ,na.rm =TRUE), 
-                    mode = as.numeric(names(table(Azure_ML_data$FarePrice)))[table(Azure_ML_data$FarePrice) == max(table(Azure_ML_data$FarePrice))] 
-                  )
+fare <- data.frame( max = max(Titanic_data$FarePrice ,na.rm =TRUE), 
+                    min = min(Titanic_data$FarePrice ,na.rm =TRUE) )
 
 #---- numericInput ----
-age <- data.frame( max = floor(max(Azure_ML_data$Age ,na.rm =TRUE)), 
-                   min = floor(min(Azure_ML_data$Age ,na.rm =TRUE)), 
-                   mode = floor(as.numeric(names(table(Azure_ML_data$Age)))[table(Azure_ML_data$Age) == max(table(Azure_ML_data$Age))])
-                  ) 
-SibSp <- data.frame( max = max(as.numeric(Azure_ML_data$SiblingSpouse),na.rm =TRUE), 
-                     min = min(as.numeric(Azure_ML_data$SiblingSpouse),na.rm =TRUE), 
-                     mode = as.numeric(names(table(Azure_ML_data$SiblingSpouse)))[table(Azure_ML_data$SiblingSpouse) == max(table(Azure_ML_data$SiblingSpouse))] 
-                    ) 
-Parch <- data.frame( max = max(as.numeric(Azure_ML_data$ParentChild),na.rm =TRUE), 
-                     min = min(as.numeric(Azure_ML_data$ParentChild),na.rm =TRUE), 
-                     mode = as.numeric(names(table(Azure_ML_data$ParentChild)))[table(Azure_ML_data$ParentChild) == max(table(Azure_ML_data$ParentChild))] 
-                   )  
+age <- data.frame( max = floor(max(Titanic_data$Age ,na.rm =TRUE)), 
+                   min = floor(min(Titanic_data$Age ,na.rm =TRUE)) ) 
+sibSp <- data.frame( max = max(as.numeric(Titanic_data$SiblingSpouse),na.rm =TRUE), 
+                     min = min(as.numeric(Titanic_data$SiblingSpouse),na.rm =TRUE) ) 
+parch <- data.frame( max = max(as.numeric(Titanic_data$ParentChild),na.rm =TRUE), 
+                     min = min(as.numeric(Titanic_data$ParentChild),na.rm =TRUE) )
+
 
 #===========================================================================
 # Shiny Layout
@@ -56,15 +46,17 @@ shinyUI(fluidPage(
   
   sidebarLayout(
     sidebarPanel(
-      selectInput("PassengerClass", "PassengerClass : ", choices=Pclass),
+      selectInput("PassengerClass", "Passenger Class : ", choices=pclass),
       selectInput("Gender", "Gender : ", choices=gender),
-      selectInput("PortEmbarkation", "PortEmbarkation : ", choices=Embarked),
-      numericInput("Age", "Age : ", min = age$min, max = age$max, value =age$mode, step = 0.5),
-      numericInput("SiblingSpouse", "SiblingSpouse : ", min = SibSp$min, max = SibSp$max, value =SibSp$mode, step = 1),
-      numericInput("ParentChild", "ParentChild : ", min = Parch$min, max = Parch$max, value =Parch$mode, step = 1),
-      sliderInput("FarePrice", "FarePrice : ", min = Fare$min, max = Fare$max, value = Fare$mode, step = 0.0001, sep='')
+      selectInput("PortEmbarkation", "Port Embarkation : ", choices=embarked),
+      numericInput("Age", "Age : ", min = age$min, max = age$max, value =age$max, step = 0.5),
+      numericInput("SiblingSpouse", "Sibling Spouse : ", min = sibSp$min, max = sibSp$max, value =sibSp$max, step = 1),
+      numericInput("ParentChild", "Parent Child : ", min = parch$min, max = parch$max, value =parch$max, step = 1),
+      sliderInput("FarePrice", "Fare Price : ", min = fare$min, max = fare$max, value = fare$max, step = 0.0001, sep='')
     ),
     mainPanel( imageOutput("result_plot") )
   )
   
 ))
+
+
