@@ -7,7 +7,7 @@ library(data.table)
 #===========================================================================
 # Data Prepare for selectInput,sliderInput,numericInput
 #===========================================================================
-path = ' Your File Path '
+path = ' Your File Path '  ###### Check 1 ######
 #Path Example(Mac): '/Users/kristen/Desktop/'
 #Path Example(Mac): 'C:/Desktop/'
 
