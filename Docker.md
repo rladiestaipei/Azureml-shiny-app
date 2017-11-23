@@ -2,10 +2,11 @@
 
 #### Step0.
 先安裝好 Docker
+[選擇符合作業系統的版本](https://docs.docker.com/engine/installation/)
 > Docker For Mac / Docker For Windows
 
 #### Step1.
-開啟 Terminal 或是 Power Shell 
+開啟 Terminal（Unix 系統） 或是 PowerShell／cmd（Windows 系統）
 
 #### Step2.
 ```
