@@ -8,8 +8,8 @@ library(data.table)
 # Data Prepare for selectInput,sliderInput,numericInput
 #===========================================================================
 path = ' Your File Path '  ###### Check 1 ######
-#Path Example(Mac): '/Users/kristen/Desktop/'
-#Path Example(Windows): 'C:/Desktop/'
+#Path Example(Mac): '/Users/kristen/Desktop/Shiny_Titanic'
+#Path Example(Windows): 'C:/Desktop/Shiny_Titanic' or 'C:\\Desktop\\Shiny_Titanic'
 
 #---- Load Data ----
 Titanic_train <- fread(file.path(path, "Titanic_train.csv")) %>% select(-Survived)
