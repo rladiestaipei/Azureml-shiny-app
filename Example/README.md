@@ -21,3 +21,24 @@
   - poutcome : 過去推銷的活動是否成功
   - y : 客戶是否訂購了定期存款
 + 資料來源: http://archive.ics.uci.edu/ml/datasets/Bank+Marketing  
+
+## 預測成年人收入 Adult Income
+### 資料說明
++ 檔案 : adult.csv 
++ 資料簡述 : 人口普查數據預測收入是否超過5萬美元/年
++ 資料維度 : 48842 筆資料，共 10 個欄位(此資料集為部分資料，只取出幾個重要的變數)
++ 欄位說明: 
+  - age : 年齡
+  - workclass : 工作種類
+  - education : 教育程度
+  - marital-status : 婚姻狀況
+  - occupation :職業
+  - race : 種族
+  - sex : 性別
+  - capital-gain : 資本盈利
+  - capital-loss : 資本損失
+  - hours-per-week : 每週工作小時
+  - native-country : 原始國籍
+  - income : 收入是否超過5萬美元/年(>50K, <=50K)
++ 資料來源: http://archive.ics.uci.edu/ml/datasets/Bank+Marketing  
+> [Note] 資料中有遺失值
