@@ -8,7 +8,7 @@ library(data.table)
 # Data Prepare for selectInput,sliderInput,numericInput
 #===========================================================================
 path = ' Your File Path '  ###### Check 1 ######
-#Path Example(Mac): '/Users/kristen/Desktop/Shiny_Titanic'
+#Path Example(Mac): '/Users/kristen/Desktop/Azureml-shiny-app-master/Shiny_Titanic'
 #Path Example(Windows): 'C:/Users/kristen/Desktop/Azureml-shiny-app-master/Shiny_Titanic' 
 #                    or 'C:\\Users\\kristen\\Desktop\\Azureml-shiny-app-master\\Shiny_Titanic'
 
