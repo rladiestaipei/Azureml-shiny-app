@@ -9,7 +9,7 @@ library(data.table)
 #===========================================================================
 path = ' Your File Path '  ###### Check 1 ######
 #Path Example(Mac): '/Users/kristen/Desktop/'
-#Path Example(Mac): 'C:/Desktop/'
+#Path Example(Windows): 'C:/Desktop/'
 
 #---- Load Data ----
 Titanic_train <- fread(file.path(path, "Titanic_train.csv")) %>% select(-Survived)
