@@ -14,7 +14,7 @@
   - job : 職業
   - marital : 婚姻狀況
   - education : 教育程度
-  - default : 是否有偉約信用
+  - default : 是否有違約信用
   - housing : 是否有住房貸款
   - loan : 是否有個人貸款
   - campaign : 這系列推銷中的總聯繫數量(包含最後一次聯繫數)
