@@ -9,7 +9,8 @@ library(data.table)
 #===========================================================================
 path = ' Your File Path '  ###### Check 1 ######
 #Path Example(Mac): '/Users/kristen/Desktop/Shiny_Titanic'
-#Path Example(Windows): 'C:/Desktop/Shiny_Titanic' or 'C:\\Desktop\\Shiny_Titanic'
+#Path Example(Windows): 'C:/Users/kristen/Desktop/Azureml-shiny-app-master/Shiny_Titanic' 
+#                    or 'C:\\Users\\kristen\\Desktop\\Azureml-shiny-app-master\\Shiny_Titanic'
 
 #---- Load Data ----
 Titanic_train <- fread(file.path(path, "Titanic_train.csv")) %>% select(-Survived)
