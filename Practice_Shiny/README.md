@@ -1,18 +1,8 @@
 # Shiny 
 利用四組練習用資料集建立出的 Shiny 範本
 
-## 二手車 UsedCar
-### 說明
-+ 資料簡述 : 資料包含 車價、車齡、維修狀況、品牌等，想預測二手車的車價
-
-## 銀行行銷 Bank Marketing
-### 說明
-+ 資料簡述 : 葡萄牙銀行機構的電話行銷，想知道客戶會不會在該銀行做定期存款
-
-## 預測成年人收入 Adult Income
-### 說明
-+ 資料簡述 : 人口普查數據預測收入是否超過5萬美元/年
-
-## 預測Airbnb房價 Airbnb Pricing
-### 說明
-+ 資料簡述 : 預測airbnb租金
++ 二手車 UsedCar
+  - <a href="https://github.com/rladiestaipei/Azureml-shiny-app/tree/master/Practice_Shiny/Used_Car"> Shiny </a>
++ 銀行行銷 Bank Marketing
++ 預測成年人收入 Adult Income
++ 預測Airbnb房價 Airbnb Pricing
