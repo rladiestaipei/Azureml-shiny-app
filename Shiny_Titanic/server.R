@@ -11,7 +11,7 @@ library(rjson)
 #===========================================================================
 function(input, output) {
   #==== Get UI.R's input ====
-  Ui_input <- reactive({ 
+  Ui_input <- reactive({ ###### Check 1 ######
    return( list( 'PassengerClass' = input$PassengerClass,
                  'Gender' = input$Gender ,
                  'Age' = as.character(input$Age),
@@ -42,11 +42,11 @@ function(input, output) {
     
     #---- Web service : API key ----
     body = enc2utf8(toJSON(req))
-    api_key = " Your api Key " 
+    api_key = " Your api Key "  ###### Check 2 ######
     authz_hdr = paste('Bearer', api_key, sep=' ')
     
     h$reset()
-    curlPerform(url = "Your Request-Response URL ",
+    curlPerform(url = "Your Request-Response URL ",   ###### Check 3 ######
                 httpheader=c('Content-Type' = "application/json", 'Authorization' = authz_hdr),
                 postfields=body,
                 writefunction = h$update,
@@ -55,7 +55,7 @@ function(input, output) {
     )
     
     #---- Get Result  ----
-    result = fromJSON( h$value() )$Results$output2[[1]]$PredictedSurvived
+    result = fromJSON( h$value() )$Results$output2[[1]]$PredictedSurvived   ###### Check 4 ######
     
     if ( result == "1") {
       return( list(
