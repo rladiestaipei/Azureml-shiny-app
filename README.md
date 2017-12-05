@@ -32,10 +32,10 @@ AzureML環境介紹 [Video](https://www.facebook.com/chiehningchen/videos/101542
 
 ## 連結預設模型(AzureML裡)到Shiny @Kristen
 ### Code/示範
-[link](https://github.com/rladiestaipei/Azureml-shiny-app/)
+[link](https://github.com/rladiestaipei/Azureml-shiny-app/tree/master/Shiny_Titanic)
 
 ### 教學文件
-[slide](https://www.slideshare.net/HsinYuChan1/shiny-on-azure)
+[Slide](https://drive.google.com/open?id=1GF52URiBjUfpChoWTRG8JBRLVo4v-iJy)
 
 ### 補充教材
 + [Request Response API Documentation for TitanicWS](https://studio.azureml.net/apihelp/workspaces/852a506a05ab41868939caa8f97d3a57/webservices/cc53c7743e5b4abbbeb417fa807c4fbc/endpoints/c052c781636540b4a2530c5b753cb947/score#sampleCode)
