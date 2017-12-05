@@ -1,15 +1,12 @@
-# 資料集
-練習用資料集共四組
-
 ## 二手車 UsedCar
 ### 資料說明
-+ 檔案 : usedcar1209.csv
++ 檔案 : <a href="https://github.com/rladiestaipei/Azureml-shiny-app/blob/master/Practice_Dataset/usedcar1209.csv">usedcar1209.csv</a>
 + 資料簡述 : 資料包含 車價、車齡、維修狀況、品牌等，想預測二手車的車價
 + 資料來源: datasource->https://dc.dsp.im/main/content/used-car-price-challenge#data credit to NTU CS+X and DSP
 
 ## 銀行行銷 Bank Marketing
 ### 資料說明
-+ 檔案 : bank.csv
++ 檔案 : <a href="https://github.com/rladiestaipei/Azureml-shiny-app/blob/master/Practice_Dataset/bank.csv">bank.csv</a>
 + 資料簡述 : 葡萄牙銀行機構的電話行銷，想知道客戶會不會在該銀行做定期存款
 + 資料維度 : 4119 筆資料，共 10 個欄位(此資料集為部分資料，只取出幾個重要的變數)
 + 欄位說明:
@@ -27,7 +24,7 @@
 
 ## 預測成年人收入 Adult Income
 ### 資料說明
-+ 檔案 : adult.csv
++ 檔案 : <a href="https://github.com/rladiestaipei/Azureml-shiny-app/blob/master/Practice_Dataset/adult.csv">adult.csv</a>
 + 資料簡述 : 人口普查數據預測收入是否超過5萬美元/年
 + 資料維度 : 48842 筆資料，共 12 個欄位(此資料集為部分資料，只取出幾個重要的變數)
 + 欄位說明:
@@ -48,7 +45,7 @@
 
 ## 預測Airbnb房價 Airbnb Pricing
 ### 資料說明
-+ 檔案 : airbnb.csv
++ 檔案 : <a href="https://github.com/rladiestaipei/Azureml-shiny-app/blob/master/Practice_Dataset/airbnb.csv">airbnb.csv</a>
 + 資料簡述 : 預測airbnb租金
 + 資料維度 : 2810 筆資料，共 9 個欄位(此資料集為部分資料，只取出幾個重要的變數)
 + 欄位說明:
