@@ -2,8 +2,6 @@
 # Library
 #===========================================================================
 library(shiny)
-library(dplyr)
-library(data.table)
 library(bitops)
 library(RCurl)
 library(rjson)
@@ -13,7 +11,7 @@ library(rjson)
 #===========================================================================
 function(input, output) {
   #==== Get UI.R's input ====
-  Ui_input <- reactive({   ###### Check 2 ######
+  Ui_input <- reactive({   ###### Check 1 ######
     return( list('vehicleType' = input$vehicleType,
                  'gearbox' = input$gearbox,
                  'powerPS' = input$powerPS,
@@ -41,11 +39,11 @@ function(input, output) {
     
     #---- Web service : API key ----
     body = enc2utf8(toJSON(req))
-    api_key = "YourAPI"   ###### Check 3 ######
+    api_key = "YourAPI"   ###### Check 2 ######
     authz_hdr = paste('Bearer', api_key, sep=' ')
     
     h$reset()
-    curlPerform(url = "YourURL",   ###### Check 4 ######
+    curlPerform(url = "YourURL",   ###### Check 3 ######
                 httpheader=c('Content-Type' = "application/json", 'Authorization' = authz_hdr),
                 postfields=body,
                 writefunction = h$update,
@@ -54,7 +52,7 @@ function(input, output) {
     )
     
     #---- Get Result  ----
-    result = fromJSON( h$value() )$Results$output1[[1]]$Predicted  #<- Add Parse Result Here   ###### Check 5 ######
-     }, )
+    result = fromJSON( h$value() )$Results$output1[[1]]$Predicted  #<- Add Parse Result Here   ###### Check 4 ######
+     })
    }
  

@@ -1,7 +1,10 @@
+# 資料集
+練習用資料集共四組
+
 ## 二手車 UsedCar
 ### 資料說明
 + 檔案 : usedcar1209.csv
-+ 資料簡述 : 資料包含 車價、車齡、維修狀況、品牌等
++ 資料簡述 : 資料包含 車價、車齡、維修狀況、品牌等，想預測二手車的車價
 + 資料來源: datasource->https://dc.dsp.im/main/content/used-car-price-challenge#data credit to NTU CS+X and DSP
 
 ## 銀行行銷 Bank Marketing
