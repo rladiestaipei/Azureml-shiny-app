@@ -35,7 +35,7 @@ AzureML環境介紹 [Video](https://www.facebook.com/chiehningchen/videos/101542
 [link](https://github.com/rladiestaipei/Azureml-shiny-app/tree/master/Shiny_Titanic)
 
 ### 教學文件
-[Slide](https://drive.google.com/open?id=1FHfJuBJROyrWME1NbFrKAjs2pot3kKN2)
+[Slide](https://drive.google.com/open?id=1v6OqqdPpJJwnGUq6Hexe78lx0m8lIxII)
 
 ### 補充教材
 + [Request Response API Documentation for TitanicWS](https://studio.azureml.net/apihelp/workspaces/852a506a05ab41868939caa8f97d3a57/webservices/cc53c7743e5b4abbbeb417fa807c4fbc/endpoints/c052c781636540b4a2530c5b753cb947/score#sampleCode)
