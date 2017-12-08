@@ -53,3 +53,6 @@ AzureML環境介紹 [Video](https://www.facebook.com/chiehningchen/videos/101542
 參考資料1.Training and operationalization of Scikit-Learn models
 https://gallery.cortanaintelligence.com/Experiment/Training-and-operationalization-of-Scikit-Learn-models-1
 
+
+## FAQ
+[link](https://onedrive.live.com/?cid=cf211efc6ea69b1a&id=CF211EFC6EA69B1A%21131&authkey=%21AGt6Ehbd7FREV2Y)
