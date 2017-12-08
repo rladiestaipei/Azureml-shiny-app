@@ -44,7 +44,8 @@ shinyUI(fluidPage(
                    label = "Bedrooms : ", 
                    min = bedroom_min, max = bedroom_max, value =accommodates_max, step = 1, sep='')
     ),
-    mainPanel( span(textOutput("result_text") ,style="font-size: 30px;font-family: impact;"))
+    list(mainPanel( span(textOutput("result_text") ,style="font-size: 30px;font-family: impact;")),
+    mainPanel = (imageOutput("result_plot") ))
   )
   
 ))
