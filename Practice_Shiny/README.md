@@ -6,5 +6,6 @@
 + 銀行行銷 Bank Marketing
   - <a href="https://github.com/rladiestaipei/Azureml-shiny-app/tree/master/Practice_Shiny/Bank_Marketing"> Shiny </a>
 + 預測成年人收入 Adult Income
+  - <a https://github.com/rladiestaipei/Azureml-shiny-app/tree/master/Practice_Shiny/Adult_Income"> Shiny </a>
 + 預測Airbnb房價 Airbnb Pricing
   - <a href="https://github.com/rladiestaipei/Azureml-shiny-app/tree/master/Practice_Shiny/Shiny_Airbnb"> Shiny </a>
