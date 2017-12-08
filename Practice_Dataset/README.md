@@ -2,6 +2,15 @@
 ### 資料說明
 + 檔案 : <a href="https://github.com/rladiestaipei/Azureml-shiny-app/blob/master/Practice_Dataset/usedcar1209.csv">usedcar1209.csv</a>
 + 資料簡述 : 資料包含 車價、車齡、維修狀況、品牌等，想預測二手車的車價
+  - id : 資料ID
+  - price : 車價
+  - vehicleType : 品牌
+  - yearOfRegistration : 車齡
+  - gearbox : 汽車配件（變速箱？）
+  - powerPS : 汽車配件（電瓶？）
+  - kilometer ： 里程數
+  - notRepairedDamage : 維修狀況
+
 + 資料來源: datasource->https://dc.dsp.im/main/content/used-car-price-challenge#data credit to NTU CS+X and DSP
 
 ## 銀行行銷 Bank Marketing
