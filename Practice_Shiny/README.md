@@ -9,3 +9,4 @@
   - <a href="https://github.com/rladiestaipei/Azureml-shiny-app/tree/master/Practice_Shiny/Adult_Income"> Shiny </a>
 + 預測Airbnb房價 Airbnb Pricing
   - <a href="https://github.com/rladiestaipei/Azureml-shiny-app/tree/master/Practice_Shiny/Shiny_Airbnb"> Shiny </a>
+  - <a href="https://github.com/rladiestaipei/Azureml-shiny-app/tree/master/Practice_Shiny/Shiny_Airbnb_Nick"> Shiny </a> by @ctwxdd
