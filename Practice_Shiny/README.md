@@ -1,6 +1,9 @@
 # Shiny 
 利用四組練習用資料集，做出的 Shiny 範本
 
++ 鐵達尼號 Titanic  
+  - <a href="https://github.com/rladiestaipei/Azureml-shiny-app/tree/master/Practice_Shiny/Titanic_Simple"> shiny @ningchencontact 簡單版鐵達號(不載入資料集及圖片)
+
 + 二手車 UsedCar
   - <a href="https://github.com/rladiestaipei/Azureml-shiny-app/tree/master/Practice_Shiny/Used_Car"> Shiny </a> by @ningchencontact
   - <a href="https://github.com/rladiestaipei/Azureml-shiny-app/tree/master/Practice_Shiny/Used_Car_Alice"> Shiny </a> by Alice
