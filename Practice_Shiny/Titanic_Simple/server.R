@@ -12,14 +12,10 @@ library(rjson)
 #===========================================================================
 function(input, output) {
   #==== Get UI.R's input ====
-  UI_input <- reactive({  v_1 <- input$PassengerClass
-                          v_2 <- input$Gender 
-                          v_3 <- as.character(input$Age)  
-                          v_4 <- as.character(input$SiblingSpouse)  
-                          v_5 <- as.character(input$ParentChild)  
-                          v_6 <- as.character(input$FarePrice)  
-                          v_7 <- input$PortEmbarkation
-                          return(list( v_1,v_2,v_3,v_4,v_5,v_6,v_7 ))
+  UI_input <- reactive({  list( 'Pclass' = input$PassengerClass,
+                                'Sex' = input$Gender ,
+                                'Age' = as.character(input$Age)
+                              )
                        })
   
   #==== Output : Prediction ====   
@@ -30,26 +26,19 @@ function(input, output) {
     
     h = basicTextGatherer()
     hdr = basicHeaderGatherer()
-    
-    #---- UI input data ----    
-    input_data = UI_input()
+
     
     #---- Put input_data to Azure ML workspace ----
 
     
-    req = list(
+    req =  list(
       Inputs = list(
-        "input1" = list(
-          "ColumnNames" = list("PassengerClass", "Gender", "Age", "SiblingSpouse", "ParentChild", "FarePrice", "PortEmbarkation"),
-          "Values" = list(  input_data  ) 
-          #Example: input_data = list("3", "male", "50", "0", "0", "0", "A")
+        "input1"= list(
+          UI_input()
         )
       ),
       GlobalParameters = setNames(fromJSON('{}'), character(0))
     )
-    
-    
-    
     
     
     #---- Web service : API key ----
@@ -58,7 +47,7 @@ function(input, output) {
     authz_hdr = paste('Bearer', api_key, sep=' ')
     
     h$reset()
-    curlPerform(url = "https://ussouthcentral.services.azureml.net/workspaces/852a506a05ab41868939caa8f97d3a57/services/c052c781636540b4a2530c5b753cb947/execute?api-version=2.0&details=true",
+    curlPerform(url = "https://ussouthcentral.services.azureml.net/workspaces/601fb81f029145e7a98b85fe3cfd57e5/services/8f12ba4343ce457da26a3e72e3d1ed21/execute?api-version=2.0&format=swagger",
                 httpheader=c('Content-Type' = "application/json", 'Authorization' = authz_hdr),
                 postfields=body,
                 writefunction = h$update,
@@ -69,11 +58,11 @@ function(input, output) {
     #---- Get Result  ----
     result = h$value()
     
-    if (fromJSON(result)$Results$output2$value$Values == "1") {
-      return( "1")
-    }else if (fromJSON(result)$Results$output2$value$Values == "0") {
-      return("0")
+    if (fromJSON(result)$Results$output1[[1]]$`Scored Labels` == "1") {
+      return( "存活")
+    }else if (fromJSON(result)$Results$output1[[1]]$`Scored Labels` == "0") {
+      return("死亡")
       }
-    }, )
+    } )
 }
 
